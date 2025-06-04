@@ -23,11 +23,31 @@
       justify-content: center;
       align-items: center;
       z-index: 1000;
+      animation: fadeOut 3s ease-in-out forwards;
+      animation-delay: 3s;
+    }
+    @keyframes fadeOut {
+      to { opacity: 0; visibility: hidden; }
     }
     #loader h1 {
       font-family: 'Pacifico', cursive;
-      font-size: 2rem;
+      font-size: 2.5rem;
       color: #a0e9ff;
+      animation: fadeIn 2s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    #betty-sticker {
+      position: fixed;
+      top: 30px;
+      left: 30px;
+      width: 100px;
+      z-index: 999;
+      opacity: 0;
+      animation: fadeIn 3s ease-in-out forwards;
+      animation-delay: 1.5s;
     }
     header {
       background-color: rgba(255, 255, 255, 0.1);
@@ -53,15 +73,9 @@
       margin: 1rem;
       border-radius: 20px;
     }
-      h2 {
-  font-family: 'Pacifico', cursive;
-  color: #00bfff; /* ← azzurro vivace */
-}
-h2 {
-  font-family: 'Pacifico', cursive;
-  color: #00bfff; /* ← azzurro vivace */
-}
-
+    h2 {
+      font-family: 'Pacifico', cursive;
+      color: #ffccf9;
     }
     ul {
       list-style: none;
@@ -70,11 +84,40 @@ h2 {
     li {
       margin-bottom: 0.5rem;
     }
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+    }
+    .gallery img {
+      width: 100px;
+      height: auto;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+    .gallery img:hover {
+      transform: scale(1.1);
+    }
     footer {
       text-align: center;
       padding: 1rem;
       font-size: 0.9rem;
       color: #fff;
+    }
+    #audio-control {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: rgba(255,255,255,0.2);
+      border: none;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      font-size: 24px;
+      cursor: pointer;
+      color: white;
     }
     @media (max-width: 600px) {
       header h1 {
@@ -92,10 +135,21 @@ h2 {
     <h1>Benvenuti al Morena Caffè...</h1>
   </div>
 
+  <img id="betty-sticker" src="bettyboop-sticker.png" alt="Betty Boop">
+
+  <audio id="background-music" src="Beéle - Morena (LetraLyrics).mp3" autoplay loop></audio>
+  <button id="audio-control">🎵</button>
+
   <script>
-    window.addEventListener('load', () => {
-      document.getElementById('loader').style.display = 'none';
-    });
+    const audio = document.getElementById('background-music');
+    const control = document.getElementById('audio-control');
+    control.onclick = () => {
+      if (audio.paused) {
+        audio.play();
+      } else {
+        audio.pause();
+      }
+    };
   </script>
 
   <header>
@@ -105,57 +159,43 @@ h2 {
   </header>
 
   <section>
-    <h2>☕ Caffetteria e Colazioni</h2>
-    <ul>
-      <li>Caffè, cappuccino, latte, orzo, ginseng</li>
-      <li>Cornetti freschi e speciali farciture</li>
-      <li>Biscotti artigianali</li>
-    </ul>
+    <h2>🏖️ La Nostra Storia</h2>
+    <p>Affacciato direttamente sulla spiaggia, il Morena Caffè è un lido bar dal cuore latino, dove colori vivaci, musica, fiori e profumo di cocco si fondono in un’atmosfera unica. Nato dall’energia e dalla visione di Mara, affettuosamente chiamata "Morena" dalla sua famiglia dominicana, il nostro lido è un angolo di relax, gusto e divertimento, dove lo spirito caraibico vive ogni giorno, tra palme, ombrelloni di paglia e tramonti mozzafiato. Qui la sabbia incontra il ritmo, la cucina incontra il sorriso, e voi incontrate il vostro momento di felicità.</p>
   </section>
 
   <section>
-    <h2>🍕 Rosticceria e Snack</h2>
+    <h2>🍹 Cocktail Speciali</h2>
     <ul>
-      <li>Pizzette calde</li>
-      <li>Focacce e rustici misti</li>
-      <li>Bruschette assortite</li>
-      <li>Taglieri per aperitivo con salumi, formaggi, salse tropicali</li>
+      <li><strong>Spritz</strong> – Classico italiano con Aperol o Campari</li>
+      <li><strong>Hugo</strong> – Fresco con menta e fiori di sambuco</li>
+      <li><strong>Gin Tonic</strong> – Gusto secco con lime</li>
+      <li><strong>Mojito</strong> – Rum, lime, zucchero e menta</li>
+      <li><strong>Cuba Libre</strong> – Rum e cola con una fetta di lime</li>
+      <li><strong>Caipirinha</strong> – Lime, zucchero di canna e cachaça</li>
+      <li><strong>Pina Colada</strong> – Ananas, cocco e rum bianco</li>
+      <li><strong>Daiquiri alla frutta</strong> – In versione fragola, mango o pesca</li>
+      <li><strong>Margarita</strong> – Tequila, triple sec e succo di lime</li>
+      <li><strong>Cordino Campari</strong> – Tradizione salernitana</li>
+      <li><strong>Cocktail analcolici</strong> – Fruttati e dissetanti</li>
+      <li><strong>Prosecco e bollicine</strong> – Per brindare al tramonto</li>
     </ul>
   </section>
 
-  <section>
-    <h2>🍹 Aperitivi & Cocktail</h2>
-    <ul>
-      <li>Spritz, Hugo, Gin Tonic</li>
-      <li>Mojito, Cuba Libre, Caipirinha</li>
-      <li>Pina Colada, Daiquiri, Margarita</li>
-      <li>Cordino Campari, analcolici freschi</li>
-      <li>Prosecco e bollicine</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>🍻 Birre & Bevande</h2>
-    <ul>
-      <li>Birre alla spina e in bottiglia</li>
-      <li>Bevande in lattina</li>
-      <li>Acqua naturale/frizzante</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>🌴 Servizi in Spiaggia</h2>
-    <ul>
-      <li>Noleggio ombrelloni, lettini, sdraio</li>
-      <li>Gazebo con frutta fresca e prosecco</li>
-      <li>Pedalò per un giro al largo</li>
-      <li>Eventi latini serali</li>
-    </ul>
+  <section class="gallery">
+    <h2>📸 Galleria</h2>
+    <img src="IMG_4317.HEIC" alt="Foto 1">
+    <img src="IMG_4318.HEIC" alt="Foto 2">
+    <img src="IMG_4319.HEIC" alt="Foto 3">
+    <img src="IMG_4320.HEIC" alt="Foto 4">
+    <img src="photo-output 2.HEIC" alt="Sticker 1">
+    <img src="photo-output 3.HEIC" alt="Sticker 2">
   </section>
 
   <footer>
-    Seguici su Instagram e Facebook | Taggaci per condividere il tuo tramonto al Morena!
+    Seguici su <a href="https://www.instagram.com/morena._caffe" style="color:white;">Instagram</a> | Tel: <a href="tel:+393343353788" style="color:white;">3343353788</a><br>
+    Taggaci nelle tue foto per condividere il tuo tramonto al Morena!
   </footer>
 </body>
 </html>
+
 
