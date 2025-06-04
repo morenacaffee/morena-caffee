@@ -12,14 +12,35 @@
       background: linear-gradient(to bottom right, #a0e9ff, #e0bbff);
       color: #fff;
     }
+    #loader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+    #loader h1 {
+      font-family: 'Pacifico', cursive;
+      font-size: 2rem;
+      color: #a0e9ff;
+    }
     header {
       background-color: rgba(255, 255, 255, 0.1);
       padding: 2rem;
       text-align: center;
-      background-image: url('hero-image.jpg');
+      background-image: url('foto-lido.jpg');
       background-size: cover;
       background-position: center;
       color: white;
+    }
+    header img {
+      width: 120px;
+      margin-bottom: 1rem;
     }
     header h1 {
       font-family: 'Pacifico', cursive;
@@ -49,10 +70,30 @@
       font-size: 0.9rem;
       color: #fff;
     }
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+      section {
+        padding: 1rem;
+        margin: 0.5rem;
+      }
+    }
   </style>
 </head>
 <body>
+  <div id="loader">
+    <h1>Benvenuti al Morena Caffè...</h1>
+  </div>
+
+  <script>
+    window.addEventListener('load', () => {
+      document.getElementById('loader').style.display = 'none';
+    });
+  </script>
+
   <header>
+    <img src="logo-morena.png" alt="Logo Morena Caffè">
     <h1>Morena Caffè</h1>
     <p>Un'Isola Caraibica nel Cuore di Salerno</p>
   </header>
@@ -111,3 +152,4 @@
   </footer>
 </body>
 </html>
+
