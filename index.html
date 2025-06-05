@@ -3,240 +3,173 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Morena Caffè</title>
-  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  <title>Menù - Morena Caffè</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Montserrat&display=swap" rel="stylesheet">
   <style>
     body {
+      background: linear-gradient(to bottom, #fff8f5, #ffeef8);
+      font-family: 'Montserrat', sans-serif;
       margin: 0;
-      font-family: 'Roboto', sans-serif;
-      background: linear-gradient(to bottom right, #a0e9ff, #e0bbff);
-      color: #fff;
+      padding: 0;
+      overflow-x: hidden;
+      animation: backgroundMove 20s linear infinite;
     }
-    #loader {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: white;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 1000;
-      animation: fadeOut 3s ease-out forwards;
-      animation-delay: 4s;
+    @keyframes backgroundMove {
+      0% { background-position: 0 0; }
+      100% { background-position: 0 100px; }
     }
-    #loader h1 {
-      font-family: 'Pacifico', cursive;
-      font-size: 2rem;
-      color: #a0e9ff;
-    }
-    @keyframes fadeOut {
-      to {
-        opacity: 0;
-        visibility: hidden;
-      }
-    }
-    header {
-      background-color: rgba(255, 255, 255, 0.1);
-      padding: 2rem;
+    h1 {
       text-align: center;
-      background-image: url('foto-lido.jpg');
-      background-size: cover;
-      background-position: center;
-      color: white;
-      position: relative;
-    }
-    header img {
-      width: 120px;
-      margin-bottom: 1rem;
-    }
-    #betty-boop {
-      position: absolute;
-      top: 20px;
-      left: 20px;
-      width: 100px;
-      opacity: 0;
-      animation: fadeIn 5s ease-in forwards;
+      font-family: 'Playfair Display', serif;
+      font-size: 3em;
+      margin-top: 1em;
+      color: #c04fa5;
+      animation: fadeIn 2s ease-in;
     }
     @keyframes fadeIn {
-      to {
-        opacity: 1;
-      }
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
-    header h1 {
-      font-family: 'Pacifico', cursive;
-      font-size: 3rem;
-      margin: 0;
-    }
-    section {
-      padding: 2rem;
-      background-color: rgba(255, 255, 255, 0.15);
-      margin: 1rem;
-      border-radius: 20px;
-    }
-    h2 {
-  font-family: 'Pacifico', cursive;
-  color: #00bfff; /* ← azzurro vivace */
-}
-
-    }
-    ul {
-      list-style: none;
-      padding-left: 0;
-    }
-    li {
-      margin-bottom: 0.5rem;
-    }
-    .gallery {
+    .menu-section {
+      width: 80%;
+      margin: 0 auto;
       display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
+      flex-direction: column;
+      align-items: flex-start;
+      font-family: 'Playfair Display', serif;
+      color: #4e2a59;
+      animation: fadeIn 3s ease-in;
     }
-    .gallery img {
+    .menu-category {
+      font-size: 1.6em;
+      margin-top: 1em;
+      color: #d86db2;
+    }
+    .menu-item {
+      margin: 0.3em 0;
+      font-size: 1.2em;
+      transition: transform 0.3s ease;
+    }
+    .menu-item:hover {
+      transform: scale(1.03);
+      color: #b852a5;
+    }
+    .sticker {
       width: 100px;
-      height: 100px;
-      object-fit: cover;
-      border-radius: 10px;
-      cursor: pointer;
-    }
-    .modal {
-      display: none;
       position: fixed;
-      z-index: 1000;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.9);
+      z-index: 10;
+      transition: transform 0.3s ease;
     }
-    .modal img {
-      margin: auto;
-      display: block;
-      max-width: 80%;
-      max-height: 80%;
-      margin-top: 5%;
+    .sticker:hover {
+      transform: rotate(10deg) scale(1.1);
     }
-    footer {
+    #sticker-left {
+      left: 10px;
+      bottom: 20px;
+    }
+    #sticker-right {
+      right: 10px;
+      bottom: 20px;
+    }
+    #sticker-top {
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+    }
+    #sticker-float {
+      position: absolute;
+      animation: float 4s ease-in-out infinite;
+      top: 50%;
+      left: 50%;
+      width: 80px;
+      transform: translate(-50%, -50%);
+    }
+    @keyframes float {
+      0% { transform: translate(-50%, -50%) translateY(0); }
+      50% { transform: translate(-50%, -50%) translateY(-10px); }
+      100% { transform: translate(-50%, -50%) translateY(0); }
+    }
+    .audio-container {
       text-align: center;
-      padding: 1rem;
-      font-size: 0.9rem;
-      color: #fff;
-    }
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 2rem;
-      }
-      section {
-        padding: 1rem;
-        margin: 0.5rem;
-      }
+      margin-top: 2em;
     }
   </style>
 </head>
 <body>
-  <audio autoplay loop controls style="display: none;">
-    <source src="Beéle - Morena (LetraLyrics).mp3" type="audio/mpeg">
-  </audio>
 
-  <div id="loader">
-    <h1>Benvenuti al Morena Caffè...</h1>
+  <h1>Il Nostro Menù</h1>
+
+  <div class="menu-section">
+    <div class="menu-category">☕ Caffetteria e Colazioni</div>
+    <div class="menu-item">Caffè</div>
+    <div class="menu-item">Cappuccino</div>
+    <div class="menu-item">Latte</div>
+    <div class="menu-item">Orzo</div>
+    <div class="menu-item">Ginseng</div>
+    <div class="menu-item">Cornetti e speciali farciture</div>
+    <div class="menu-item">Biscotti</div>
+
+    <div class="menu-category">🍕 Rosticceria e Snack</div>
+    <div class="menu-item">Pizzette</div>
+    <div class="menu-item">Focacce e rustici misti</div>
+    <div class="menu-item">Bruschette assortite</div>
+    <div class="menu-item">Panini e toast</div>
+    <div class="menu-item">Taglieri speciali per aperitivo con salumi, formaggi, salse tropicali</div>
+
+    <div class="menu-category">🍹 Aperitivi & Cocktail</div>
+    <div class="menu-item">Spritz (Aperol / Campari)</div>
+    <div class="menu-item">Hugo</div>
+    <div class="menu-item">Gin Tonic</div>
+    <div class="menu-item">Gin Lemon</div>
+    <div class="menu-item">Mojito</div>
+    <div class="menu-item">Cuba Libre</div>
+    <div class="menu-item">Caipirinha</div>
+    <div class="menu-item">Pina Colada</div>
+    <div class="menu-item">Daiquiri alla frutta</div>
+    <div class="menu-item">Margarita</div>
+    <div class="menu-item">Negroni</div>
+    <div class="menu-item">Sex on the beach</div>
+    <div class="menu-item">Cosmopolitan</div>
+    <div class="menu-item">Blue Lagoon</div>
+    <div class="menu-item">Cocktail analcolici freschi alla frutta</div>
+    <div class="menu-item">Prosecco e bollicine</div>
+
+    <div class="menu-category">🍺 Birre & Bevande</div>
+    <div class="menu-item">Birre in bottiglia</div>
+    <div class="menu-item">Bevande in lattina (Coca-Cola, Fanta, Sprite, ecc.)</div>
+    <div class="menu-item">Acqua naturale/frizzante</div>
+
+    <div class="menu-category">🌴 Servizi in Spiaggia</div>
+    <div class="menu-item">Noleggio ombrelloni, lettini, sdraio</div>
+    <div class="menu-item">Gazebo con frutta fresca e prosecco su richiesta</div>
+    <div class="menu-item">Pedalò per un giro al largo</div>
+    <div class="menu-item">Aperitivi e cocktail serviti direttamente in riva al mare</div>
+    <div class="menu-item">Eventi e feste latine serali con musica e balli</div>
+
+    <div class="menu-category">🥥 Un assaggio dei Caraibi</div>
+    <div class="menu-item">Acqua di cocco fresca</div>
+    <div class="menu-item">Piatti caldi con un tocco dominicano</div>
+    <div class="menu-item">Atmosfera autentica, fiori, palme e luci colorate</div>
   </div>
 
-  <header>
-    <img src="logo-morena.png" alt="Logo Morena Caffè">
-    <img id="betty-boop" src="sticker-betty.png" alt="Betty Boop">
-    <h1>Morena Caffè</h1>
-    <p>Un'Isola Caraibica nella città di Salerno</p>
-  </header>
+  <!-- Sticker interattivi -->
+  <img id="sticker-left" class="sticker" src="/images/sticker-betty-left.png" alt="Betty Boop sinistra">
+  <img id="sticker-right" class="sticker" src="/images/sticker-cocktail.png" alt="Cocktail tropicale destra">
+  <img id="sticker-top" class="sticker" src="/images/sticker-palm.png" alt="Palma decorativa in alto">
+  <img id="sticker-float" class="sticker" src="/images/sticker-sun.png" alt="Sole animato">
 
-  <section>
-    <h2>🏖️ La Nostra Storia</h2>
-    <p>Affacciato direttamente sulla spiaggia, il Morena Caffè è un lido bar dal cuore latino, dove colori vivaci, musica, fiori e profumo di cocco si fondono in un’atmosfera unica. Nato dall’energia e dalla visione di Mara, affettuosamente chiamata "Morena" dalla sua famiglia dominicana, il nostro lido è un angolo di relax, gusto e divertimento, dove lo spirito caraibico vive ogni giorno, tra palme, ombrelloni di paglia e tramonti mozzafiato.</p>
-  </section>
-
-  <section>
-    <h2>☕ Caffetteria e Colazioni</h2>
-    <ul>
-      <li>Caffè, cappuccino, latte, orzo, ginseng</li>
-      <li>Cornetti freschi e speciali farciture</li>
-      <li>Biscotti artigianali</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>🍕 Rosticceria e Snack</h2>
-    <ul>
-      <li>Pizzette calde</li>
-      <li>Focacce e rustici misti</li>
-      <li>Bruschette assortite</li>
-      <li>Taglieri per aperitivo con salumi, formaggi, salse tropicali</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>🍹 Cocktail e Aperitivi</h2>
-    <ul>
-      <li><strong>Spritz:</strong> Aperol o Campari con prosecco e soda</li>
-      <li><strong>Hugo:</strong> prosecco, sciroppo di sambuco, menta, lime</li>
-      <li><strong>Gin Tonic:</strong> gin selezionato con acqua tonica</li>
-      <li><strong>Mojito:</strong> rum bianco, lime, zucchero di canna, menta e soda</li>
-      <li><strong>Cuba Libre:</strong> rum scuro, lime e cola</li>
-      <li><strong>Caipirinha:</strong> cachaça, lime, zucchero di canna</li>
-      <li><strong>Pina Colada:</strong> rum, ananas, latte di cocco</li>
-      <li><strong>Daiquiri alla frutta:</strong> rum, lime e frutta fresca</li>
-      <li><strong>Margarita:</strong> tequila, lime, triple sec</li>
-      <li><strong>Cordino Campari:</strong> cocktail tipico salernitano</li>
-      <li><strong>Cocktail analcolici:</strong> a base di frutta tropicale</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>🍻 Birre & Bevande</h2>
-    <ul>
-      <li>Birre in bottiglia</li>
-      <li>Bevande in lattina</li>
-      <li>Acqua naturale/frizzante</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>🌴 Servizi in Spiaggia</h2>
-    <ul>
-      <li>Noleggio ombrelloni, lettini, sdraio</li>
-      <li>Gazebo con frutta fresca e prosecco</li>
-      <li>Pedalò per un giro al largo</li>
-      <li>Eventi latini serali</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>📸 Galleria</h2>
-    <div class="gallery">
-      <img src="IMG_4321.HEIC" onclick="openModal(this.src)">
-      <img src="IMG_4323.HEIC" onclick="openModal(this.src)">
-      <img src="photo-output 2.HEIC" onclick="openModal(this.src)">
-    </div>
-  </section>
-
-  <div class="modal" id="modal" onclick="this.style.display='none'">
-    <img id="modal-img">
+  <!-- Musica -->
+  <div class="audio-container">
+    <audio controls autoplay loop>
+      <source src="/audio/musica-morena.mp3" type="audio/mp3">
+      Il tuo browser non supporta l'elemento audio.
+    </audio>
   </div>
 
-  <footer>
-    Seguici su <a href="https://www.instagram.com/morena._caffe" target="_blank">Instagram</a><br>
-    Contattaci: 334 335 3788<br>
-    Taggaci per condividere il tuo tramonto al Morena!
-  </footer>
-
-  <script>
-    function openModal(src) {
-      document.getElementById("modal").style.display = "block";
-      document.getElementById("modal-img").src = src;
-    }
-  </script>
 </body>
 </html>
+
 
 
 
