@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -7,28 +8,32 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Montserrat&display=swap" rel="stylesheet">
   <style>
     body {
-      background: linear-gradient(to bottom, #fff8f5, #ffeef8);
+      background: url('images/sfondo-spiaggia.jpg') no-repeat center center fixed;
+      background-size: cover;
       font-family: 'Montserrat', sans-serif;
       margin: 0;
       padding: 0;
       overflow-x: hidden;
-      animation: backgroundMove 20s linear infinite;
-    }
-    @keyframes backgroundMove {
-      0% { background-position: 0 0; }
-      100% { background-position: 0 100px; }
-    }
-    h1 {
-      text-align: center;
-      font-family: 'Playfair Display', serif;
-      font-size: 3em;
-      margin-top: 1em;
-      color: #c04fa5;
-      animation: fadeIn 2s ease-in;
     }
     @keyframes fadeIn {
       from { opacity: 0; }
       to { opacity: 1; }
+    }
+    .welcome {
+      text-align: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 3em;
+      margin-top: 1em;
+      color: #00bcd4;
+      animation: fadeIn 4s ease-in;
+    }
+    h1 {
+      text-align: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5em;
+      margin-top: 0.5em;
+      color: #c04fa5;
+      animation: fadeIn 2s ease-in;
     }
     .menu-section {
       width: 80%;
@@ -98,6 +103,7 @@
 </head>
 <body>
 
+  <div class="welcome">Benvenuti da Morena Caffè</div>
   <h1>Il Nostro Menù</h1>
 
   <div class="menu-section">
@@ -154,10 +160,10 @@
   </div>
 
   <!-- Sticker interattivi -->
-  <img id="sticker-left" class="sticker" src="/images/sticker-betty-left.png" alt="Betty Boop sinistra">
-  <img id="sticker-right" class="sticker" src="/images/sticker-cocktail.png" alt="Cocktail tropicale destra">
-  <img id="sticker-top" class="sticker" src="/images/sticker-palm.png" alt="Palma decorativa in alto">
-  <img id="sticker-float" class="sticker" src="/images/sticker-sun.png" alt="Sole animato">
+  <img id="sticker-left" class="sticker" src="images/sticker-betty-left.png" alt="Betty Boop sinistra">
+  <img id="sticker-right" class="sticker" src="images/sticker-cocktail.png" alt="Cocktail tropicale destra">
+  <img id="sticker-top" class="sticker" src="images/sticker-palm.png" alt="Palma decorativa in alto">
+  <img id="sticker-float" class="sticker" src="images/sticker-sun.png" alt="Sole animato">
 
   <!-- Musica -->
   <div class="audio-container">
@@ -168,6 +174,4 @@
 
 </body>
 </html>
-
-
 
