@@ -14,10 +14,12 @@
       padding: 0;
       overflow-x: hidden;
     }
+
     @keyframes fadeIn {
       from { opacity: 0; }
       to { opacity: 1; }
     }
+
     .welcome {
       text-align: center;
       font-family: 'Playfair Display', serif;
@@ -26,6 +28,7 @@
       color: #004b62;
       animation: fadeIn 4s ease-in;
     }
+
     h1 {
       text-align: center;
       font-family: 'Playfair Display', serif;
@@ -34,8 +37,10 @@
       color: #c04fa5;
       animation: fadeIn 2s ease-in;
     }
+
     .menu-section {
       width: 80%;
+      max-width: 900px;
       margin: 0 auto;
       display: flex;
       flex-direction: column;
@@ -44,43 +49,54 @@
       color: #4e2a59;
       animation: fadeIn 3s ease-in;
     }
+
     .menu-category {
       font-size: 1.6em;
       margin-top: 1em;
       color: #d86db2;
     }
+
     .menu-item {
       margin: 0.3em 0;
       font-size: 1.2em;
       transition: transform 0.3s ease;
     }
+
     .menu-item:hover {
       transform: scale(1.03);
       color: #b852a5;
     }
+
     .sticker {
       width: 100px;
+      max-width: 20vw;
+      height: auto;
       position: fixed;
       z-index: 10;
       transition: transform 0.3s ease;
     }
+
     .sticker:hover {
       transform: rotate(10deg) scale(1.1);
     }
+
     #sticker-left {
       left: 10px;
       bottom: 20px;
     }
+
     #sticker-right {
       right: 10px;
       bottom: 20px;
     }
+
     #sticker-top {
       top: 20px;
       left: 50%;
       transform: translateX(-50%);
       width: 80px;
     }
+
     #sticker-float {
       position: absolute;
       animation: float 4s ease-in-out infinite;
@@ -89,14 +105,62 @@
       width: 80px;
       transform: translate(-50%, -50%);
     }
+
     @keyframes float {
       0% { transform: translate(-50%, -50%) translateY(0); }
       50% { transform: translate(-50%, -50%) translateY(-10px); }
       100% { transform: translate(-50%, -50%) translateY(0); }
     }
+
     .audio-container {
       text-align: center;
       margin-top: 2em;
+    }
+
+    /* Responsive design */
+    @media (max-width: 768px) {
+      .welcome {
+        font-size: 2em;
+        padding: 0 1em;
+      }
+
+      h1 {
+        font-size: 1.5em;
+        padding: 0 1em;
+      }
+
+      .menu-section {
+        width: 95%;
+        font-size: 1em;
+        padding: 0 1em;
+      }
+
+      .menu-item {
+        font-size: 1em;
+      }
+
+      .menu-category {
+        font-size: 1.3em;
+      }
+
+      .sticker {
+        width: 60px;
+        max-width: 15vw;
+      }
+
+      #sticker-top {
+        width: 50px;
+      }
+
+      .audio-container {
+        margin-top: 1em;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .sticker {
+        display: none;
+      }
     }
   </style>
 </head>
@@ -122,23 +186,24 @@
     <div class="menu-item">Panini e toast</div>
     <div class="menu-item">Taglieri speciali per aperitivo con salumi, formaggi, salse tropicali</div>
 
-    <div class="menu-category">🍹 Aperitivi & Cocktail</div>
-    <div class="menu-item">Spritz (Aperol / Campari)</div>
-    <div class="menu-item">Hugo</div>
-    <div class="menu-item">Gin Tonic</div>
-    <div class="menu-item">Gin Lemon</div>
-    <div class="menu-item">Mojito</div>
-    <div class="menu-item">Cuba Libre</div>
-    <div class="menu-item">Caipirinha</div>
-    <div class="menu-item">Pina Colada</div>
-    <div class="menu-item">Daiquiri alla frutta</div>
-    <div class="menu-item">Margarita</div>
-    <div class="menu-item">Negroni</div>
-    <div class="menu-item">Sex on the beach</div>
-    <div class="menu-item">Cosmopolitan</div>
-    <div class="menu-item">Blue Lagoon</div>
-    <div class="menu-item">Cocktail analcolici freschi alla frutta</div>
-    <div class="menu-item">Prosecco e bollicine</div>
+   <div class="menu-category">🍹 Aperitivi & Cocktail</div>
+<div class="menu-item">Aperitivi classici (Campari, Cordino, ecc.)</div>
+<div class="menu-item">Spritz (Aperol / Campari)</div>
+<div class="menu-item">Hugo</div>
+<div class="menu-item">Gin Tonic</div>
+<div class="menu-item">Gin Lemon</div>
+<div class="menu-item">Mojito</div>
+<div class="menu-item">Cuba Libre</div>
+<div class="menu-item">Caipirinha</div>
+<div class="menu-item">Pina Colada</div>
+<div class="menu-item">Daiquiri alla frutta</div>
+<div class="menu-item">Margarita</div>
+<div class="menu-item">Negroni</div>
+<div class="menu-item">Sex on the beach</div>
+<div class="menu-item">Cosmopolitan</div>
+<div class="menu-item">Blue Lagoon</div>
+<div class="menu-item">Cocktail analcolici freschi alla frutta</div>
+<div class="menu-item">Prosecco e bollicine</div>
 
     <div class="menu-category">🍺 Birre & Bevande</div>
     <div class="menu-item">Birre in bottiglia</div>
@@ -173,4 +238,5 @@
 
 </body>
 </html>
+
 
