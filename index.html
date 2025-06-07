@@ -27,6 +27,7 @@
       margin-top: 1em;
       color: #004b62;
       animation: fadeIn 4s ease-in;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
     }
 
     h1 {
@@ -36,6 +37,7 @@
       margin-top: 0.5em;
       color: #c04fa5;
       animation: fadeIn 2s ease-in;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
     }
 
     .menu-section {
@@ -54,12 +56,16 @@
       font-size: 1.6em;
       margin-top: 1em;
       color: #d86db2;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
     }
 
     .menu-item {
       margin: 0.3em 0;
       font-size: 1.2em;
       transition: transform 0.3s ease;
+      background-color: rgba(255, 255, 255, 0.6);
+      padding: 0.2em 0.6em;
+      border-radius: 6px;
     }
 
     .menu-item:hover {
@@ -68,8 +74,8 @@
     }
 
     .sticker {
-      width: 100px;
-      max-width: 20vw;
+      width: 120px;
+      max-width: 25vw;
       height: auto;
       position: fixed;
       z-index: 10;
@@ -94,7 +100,7 @@
       top: 20px;
       left: 50%;
       transform: translateX(-50%);
-      width: 80px;
+      width: 100px;
     }
 
     #sticker-float {
@@ -102,7 +108,7 @@
       animation: float 4s ease-in-out infinite;
       top: 50%;
       left: 50%;
-      width: 80px;
+      width: 100px;
       transform: translate(-50%, -50%);
     }
 
@@ -117,125 +123,90 @@
       margin-top: 2em;
     }
 
-    /* Responsive design */
     @media (max-width: 768px) {
-      .welcome {
-        font-size: 2em;
-        padding: 0 1em;
-      }
-
-      h1 {
-        font-size: 1.5em;
-        padding: 0 1em;
-      }
-
-      .menu-section {
-        width: 95%;
-        font-size: 1em;
-        padding: 0 1em;
-      }
-
-      .menu-item {
-        font-size: 1em;
-      }
-
-      .menu-category {
-        font-size: 1.3em;
-      }
-
-      .sticker {
-        width: 60px;
-        max-width: 15vw;
-      }
-
-      #sticker-top {
-        width: 50px;
-      }
-
-      .audio-container {
-        margin-top: 1em;
-      }
+      .welcome { font-size: 2em; padding: 0 1em; }
+      h1 { font-size: 1.5em; padding: 0 1em; }
+      .menu-section { width: 95%; font-size: 1em; padding: 0 1em; }
+      .menu-item { font-size: 1.1em; }
+      .menu-category { font-size: 1.3em; }
+      .sticker { width: 80px; max-width: 20vw; }
+      #sticker-top { width: 70px; }
     }
 
     @media (max-width: 480px) {
-      .sticker {
-        display: none;
-      }
+      .sticker { width: 60px; }
     }
   </style>
 </head>
 <body>
-
   <div class="welcome">Benvenuti da Morena Caffè</div>
   <h1>Il Nostro Menù</h1>
 
   <div class="menu-section">
     <div class="menu-category">☕ Caffetteria e Colazioni</div>
-    <div class="menu-item">Caffè</div>
-    <div class="menu-item">Cappuccino</div>
-    <div class="menu-item">Latte</div>
-    <div class="menu-item">Orzo</div>
-    <div class="menu-item">Ginseng</div>
-    <div class="menu-item">Cornetti e speciali farciture</div>
-    <div class="menu-item">Biscotti</div>
+    <div class="menu-item">Caffè – €1.20</div>
+    <div class="menu-item">Cappuccino – €1.50</div>
+    <div class="menu-item">Latte – €1.30</div>
+    <div class="menu-item">Orzo – €1.50</div>
+    <div class="menu-item">Ginseng – €1.50</div>
+    <div class="menu-item">Cornetti e speciali farciture – da €1.50</div>
+    <div class="menu-item">Biscotti – €0.80</div>
 
     <div class="menu-category">🍕 Rosticceria e Snack</div>
-    <div class="menu-item">Pizzette</div>
-    <div class="menu-item">Focacce e rustici misti</div>
-    <div class="menu-item">Bruschette assortite</div>
-    <div class="menu-item">Panini e toast</div>
-    <div class="menu-item">Taglieri speciali per aperitivo con salumi, formaggi, salse tropicali</div>
+    <div class="menu-item">Pizzette – €2.00</div>
+    <div class="menu-item">Focacce e rustici misti – €2.50</div>
+    <div class="menu-item">Bruschette assortite – €3.50</div>
+    <div class="menu-item">Panini e toast – da €3.00</div>
+    <div class="menu-item">Taglieri speciali per aperitivo – €12.00</div>
 
-   <div class="menu-category">🍹 Aperitivi & Cocktail</div>
-<div class="menu-item">Aperitivi classici (Campari, Cordino, ecc.)</div>
-<div class="menu-item">Spritz (Aperol / Campari)</div>
-<div class="menu-item">Hugo</div>
-<div class="menu-item">Gin Tonic</div>
-<div class="menu-item">Gin Lemon</div>
-<div class="menu-item">Mojito</div>
-<div class="menu-item">Cuba Libre</div>
-<div class="menu-item">Caipirinha</div>
-<div class="menu-item">Pina Colada</div>
-<div class="menu-item">Daiquiri alla frutta</div>
-<div class="menu-item">Margarita</div>
-<div class="menu-item">Negroni</div>
-<div class="menu-item">Sex on the beach</div>
-<div class="menu-item">Cosmopolitan</div>
-<div class="menu-item">Blue Lagoon</div>
-<div class="menu-item">Cocktail analcolici freschi alla frutta</div>
-<div class="menu-item">Prosecco e bollicine</div>
+    <div class="menu-category">🍹 Aperitivi & Cocktail</div>
+    <div class="menu-item">Aperitivi classici – da €4.00</div>
+    <div class="menu-item">Spritz (Aperol / Campari) – €5.00</div>
+    <div class="menu-item">Hugo – €5.00</div>
+    <div class="menu-item">Gin Tonic – €6.00</div>
+    <div class="menu-item">Gin Lemon – €6.00</div>
+    <div class="menu-item">Mojito – Rum bianco, lime, menta, zucchero di canna, soda – €6.50</div>
+    <div class="menu-item">Cuba Libre – Rum scuro, cola, lime – €6.00</div>
+    <div class="menu-item">Caipirinha – Cachaça, lime, zucchero – €6.50</div>
+    <div class="menu-item">Pina Colada – Rum, latte di cocco, succo d'ananas – €7.00</div>
+    <div class="menu-item">Daiquiri alla frutta – €6.50</div>
+    <div class="menu-item">Margarita – Tequila, triple sec, lime – €6.50</div>
+    <div class="menu-item">Negroni – Gin, vermouth rosso, bitter – €6.00</div>
+    <div class="menu-item">Sex on the beach – Vodka, succo d'arancia, pesca, cranberry – €6.50</div>
+    <div class="menu-item">Cosmopolitan – Vodka, triple sec, lime, mirtillo rosso – €6.50</div>
+    <div class="menu-item">Blue Lagoon – Vodka, blue curaçao, limonata – €6.50</div>
+    <div class="menu-item">L'Angelo Azzurro – Gin, Blue Curaçao, Triple Sec, limone – €6.50</div>
+    <div class="menu-item">Cocktail analcolici freschi alla frutta – €5.00</div>
+    <div class="menu-item">Prosecco e bollicine – da €4.00</div>
 
     <div class="menu-category">🍺 Birre & Bevande</div>
-    <div class="menu-item">Birre in bottiglia</div>
-    <div class="menu-item">Bevande in lattina (Coca-Cola, Fanta, Sprite, ecc.)</div>
-    <div class="menu-item">Acqua naturale/frizzante</div>
+    <div class="menu-item">Birre in bottiglia – da €3.00</div>
+    <div class="menu-item">Bevande in lattina (Coca-Cola, Fanta, ecc.) – €2.00</div>
+    <div class="menu-item">Acqua naturale/frizzante – €1.00</div>
 
     <div class="menu-category">🌴 Servizi in Spiaggia</div>
-    <div class="menu-item">Noleggio ombrelloni, lettini, sdraio</div>
+    <div class="menu-item">Noleggio ombrelloni, lettini, sdraio – da €10.00</div>
     <div class="menu-item">Gazebo con frutta fresca e prosecco su richiesta</div>
-    <div class="menu-item">Pedalò per un giro al largo</div>
-    <div class="menu-item">Aperitivi e cocktail serviti direttamente in riva al mare</div>
-    <div class="menu-item">Eventi e feste latine serali con musica e balli</div>
+    <div class="menu-item">Pedalò per un giro al largo – €15.00/ora</div>
+    <div class="menu-item">Aperitivi e cocktail serviti in riva al mare</div>
+    <div class="menu-item">Eventi e feste latine serali con musica</div>
 
     <div class="menu-category">🥥 Un assaggio dei Caraibi</div>
-    <div class="menu-item">Acqua di cocco fresca</div>
-    <div class="menu-item">Piatti caldi con un tocco dominicano</div>
+    <div class="menu-item">Acqua di cocco fresca – €3.00</div>
+    <div class="menu-item">Piatti caldi con un tocco dominicano – da €8.00</div>
     <div class="menu-item">Atmosfera autentica, fiori, palme e luci colorate</div>
   </div>
 
-  <!-- Sticker interattivi -->
   <img id="sticker-left" class="sticker" src="images/sticker-betty-left.png" alt="Betty Boop sinistra">
   <img id="sticker-right" class="sticker" src="images/sticker-cocktail.png" alt="Cocktail tropicale destra">
   <img id="sticker-top" class="sticker" src="images/sticker-palm.png" alt="Palma decorativa in alto">
   <img id="sticker-float" class="sticker" src="images/sticker-sun.png" alt="Sole animato">
 
-  <!-- Musica -->
   <div class="audio-container">
     <audio controls autoplay loop>
       <source src="audio/musica-morena.mp3" type="audio/mpeg">
     </audio>
   </div>
-
 </body>
 </html>
 
