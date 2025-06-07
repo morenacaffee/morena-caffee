@@ -202,12 +202,16 @@
   <img id="sticker-top" class="sticker" src="images/sticker-palm.png" alt="Palma decorativa in alto">
   <img id="sticker-float" class="sticker" src="images/sticker-sun.png" alt="Sole animato">
 
-  <div class="audio-container">
-    <audio controls autoplay loop>
-      <source src="audio/musica-morena.mp3" type="audio/mpeg">
-    </audio>
-  </div>
-</body>
+ <div class="audio-container">
+  <button onclick="document.getElementById('morena-audio').play()" style="font-size: 1.2em; padding: 0.5em 1em; border-radius: 10px; background-color: #c04fa5; color: white; border: none; cursor: pointer;">
+    ▶️ Play Musica
+  </button>
+  <audio id="morena-audio" loop>
+    <source src="audio/musica-morena.mp3" type="audio/mpeg">
+    <source src="audio/musica-morena.ogg" type="audio/ogg">
+    Il tuo browser non supporta l'audio HTML5.
+  </audio>
+</div>
 </html>
 
 
